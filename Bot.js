@@ -21,6 +21,12 @@ class Bot {
       };
     }
 
+    if (data.currentLocation === data.map.ports[0]) {
+      return {
+        kind: "dock"
+      };
+    }
+
     return {
       kind: "sail",
       direction: directions[data.currentTick % directions.length],
